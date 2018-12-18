@@ -33,16 +33,16 @@ def parse_page(html):
     except Exception as e:
         pass
 
-    def main(num):
-        url = 'http://caipiao.163.com/t/award/dlt/{}.html'.format(str(num))
-        html = get_page(url)
-        parse_page(html)
+def main(num):
+    url = 'http://caipiao.163.com/t/award/dlt/{}.html'.format(str(num))
+    html = get_page(url)
+    parse_page(html)
 
-    if __name__ == '__main__':
-        for num in range(17001, 17154):
-            main(num)
-        for num in range(18001, 18140):
-            main(num)
-        print("end...")
-        print("count："+str(count))
+if __name__ == '__main__':
+    for num in range(17001, 17154):
+        main(num)
+    for num in range(18001, 18140):
+        main(num)
+    print("end...")
+    print("count："+str(count))
 
