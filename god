@@ -39,10 +39,10 @@ def parse_page(html):
         parse_page(html)
 
     if __name__ == '__main__':
-        for num in range(17001,17154):
+        for num in range(17001, 17154):
             main(num)
         for num in range(18001, 18140):
             main(num)
-        print("大乐透爬取结束...")
-        print("爬取的数目为："+str(count))
+        print("end...")
+        print("count："+str(count))
 
