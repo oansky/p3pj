@@ -5,6 +5,17 @@ from requests.exceptions import RequestException
 from lxml import etree
 
 count = 0
+
+list_blue_key = range(12)
+list_blue_count = [0]*12
+dic_blue = dict(zip(list_blue_key, list_blue_count))
+#print(dic_blue)
+
+list_red_key = range(35)
+list_red_count = [0]*35
+dic_red = dict(zip(list_red_key, list_red_count))
+#print(dic_red)
+
 def get_page(url):
     try:
         headers = {
@@ -29,7 +40,11 @@ def parse_page(html):
         res = etree.HTML(html)
         red = res.xpath('//*[@class="smallRedball"]//text()')
         blue = res.xpath('//*[@class="smallBlueball"]//text()')
-        print(red+blue)
+        #print(red+blue)
+        for item in red:
+            dic_red[item] += 1
+        for item in blue:
+            dic_blue[item] += 1
     except Exception as e:
         pass
 
@@ -44,5 +59,7 @@ if __name__ == '__main__':
     for num in range(18001, 18140):
         main(num)
     print("end...")
+    print(dic_red)
+    print(dic_blue)
     print("count："+str(count))
 
