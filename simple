@@ -1,0 +1,22 @@
+
+在 Python 的 while 循环中，还可以使用 else 语句，while … else 在循环条件为 false 时执行 else 语句块
+
+比如：
+
+count = 0
+while count < 5:
+   print (count)
+   count = count + 1
+else:
+   print (count)
+   
+   
+有 while … else 语句，当然也有 for … else 语句啦，for 中的语句和普通的没有区别，
+else 中的语句会在循环正常执行完（即 for 不是通过 break 跳出而中断的）的情况下执行，while … else 也是一样。
+
+# 打印语句中，大括号及其里面的字符 (称作格式化字段) 将会被 .format() 中的参数替换,注意有个点的
+print('{}x{}={}\t'.format(i, j, i*j), end='')
+
+默认参数的值是不可变的对象，比如None、True、False、数字或字符串
+
+*hobby是可变参数，且 hobby其实就是一个 tuple （元祖），**hobby是关键字参数，且 hobby 就是一个 dict （字典）
